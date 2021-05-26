@@ -219,7 +219,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.2k 字
+      4k 字
     </span>
   
 
@@ -229,7 +229,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      51
+      47
        分钟
     </span>
   
@@ -457,53 +457,53 @@ Are you sure you want to <span class="token builtin class-name">continue</span> 
 </ul>
 <h4 id="matery主题"><a href="#matery主题" class="headerlink" title="matery主题"></a>matery主题</h4><p>打开 <code>博客路径/themes/matery</code> 路径下的 <code>_config.yml</code> 文件</p>
 <p>拉到最后，填写 <strong>jsDelivr</strong> 属性</p>
-<div class="code-wrapper"><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">jsDelivr:
-  url: https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;woshixiaoguo&#x2F;woshixiaoguo.github.io
-# url: https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;xxxx&#x2F;xxxx.github.io
-# xxxx改为自己的github用户名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div>
+<div class="code-wrapper"><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">jsDelivr</span><span class="token punctuation">:</span>
+  <span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/gh/woshixiaoguo/woshixiaoguo.github.io
+<span class="token comment"># url: https://cdn.jsdelivr.net/gh/xxxx/xxxx.github.io</span>
+<span class="token comment"># xxxx改为自己的github用户名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <h4 id="fluid主题"><a href="#fluid主题" class="headerlink" title="fluid主题"></a>fluid主题</h4><p>打开 <code>博库路径/themes/fluid</code> 路径下的 <code>_static.prefix.yml</code> 文件</p>
 <p>或者，如果你使用了平滑升级</p>
 <p>打开 <code>博客路径/source/_data</code> 路径下的 <code>fluid_static_prefix.yml</code> 文件</p>
 <p>记得在第一次使用 <strong>fluid</strong> 主题的时候，发现静态资源总是加载不出来，所以将使用 <strong>staticfile</strong> 服务的静态资源重新替换成了使用其他 <strong>cdn</strong> 服务的静态资源。</p>
 <p>以下 <code>#</code> 后面的都是原生的配置，由于不能使用，寻找了替代品。</p>
-<div class="code-wrapper"><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">anchor: https:&#x2F;&#x2F;cdn.bootcdn.net&#x2F;ajax&#x2F;libs&#x2F;anchor-js&#x2F;4.2.2&#x2F; #https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;anchor-js&#x2F;4.2.2&#x2F;
+<div class="code-wrapper"><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">anchor</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/anchor<span class="token punctuation">-</span>js/4.2.2/ <span class="token comment">#https://cdn.staticfile.org/anchor-js/4.2.2/</span>
 
-github_markdown: https:&#x2F;&#x2F;cdn.bootcdn.net&#x2F;ajax&#x2F;libs&#x2F;github-markdown-css&#x2F;4.0.0&#x2F; #https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;github-markdown-css&#x2F;4.0.0&#x2F;
+<span class="token key atrule">github_markdown</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/github<span class="token punctuation">-</span>markdown<span class="token punctuation">-</span>css/4.0.0/ <span class="token comment">#https://cdn.staticfile.org/github-markdown-css/4.0.0/</span>
 
-jquery: https:&#x2F;&#x2F;cdn.bootcdn.net&#x2F;ajax&#x2F;libs&#x2F;jquery&#x2F;3.4.1&#x2F; #https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;jquery&#x2F;3.4.1&#x2F;
+<span class="token key atrule">jquery</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/ <span class="token comment">#https://cdn.staticfile.org/jquery/3.4.1/</span>
 
-bootstrap: https:&#x2F;&#x2F;cdn.bootcdn.net&#x2F;ajax&#x2F;libs&#x2F;twitter-bootstrap&#x2F;4.4.1&#x2F; #https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;twitter-bootstrap&#x2F;4.4.1&#x2F;
+<span class="token key atrule">bootstrap</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/twitter<span class="token punctuation">-</span>bootstrap/4.4.1/ <span class="token comment">#https://cdn.staticfile.org/twitter-bootstrap/4.4.1/</span>
 
-highlightjs: https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;highlight.js&#x2F;10.0.0&#x2F;
+<span class="token key atrule">highlightjs</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/highlight.js/10.0.0/
 
-prismjs: https:&#x2F;&#x2F;cdn.bootcdn.net&#x2F;ajax&#x2F;libs&#x2F;prism&#x2F;1.21.0&#x2F; #https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;prism&#x2F;1.21.0&#x2F;
+<span class="token key atrule">prismjs</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/prism/1.21.0/ <span class="token comment">#https://cdn.staticfile.org/prism/1.21.0/</span>
 
-tocbot: https:&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;tocbot&#x2F;4.11.1&#x2F; #https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;tocbot&#x2F;4.11.1&#x2F;
+<span class="token key atrule">tocbot</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/ <span class="token comment">#https://cdn.staticfile.org/tocbot/4.11.1/</span>
 
-typed: https:&#x2F;&#x2F;cdn.bootcdn.net&#x2F;ajax&#x2F;libs&#x2F;typed.js&#x2F;2.0.11&#x2F; #https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;typed.js&#x2F;2.0.11&#x2F;
+<span class="token key atrule">typed</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/typed.js/2.0.11/ <span class="token comment">#https://cdn.staticfile.org/typed.js/2.0.11/</span>
 
-fancybox: https:&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;fancybox&#x2F;3.5.7&#x2F; #https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;fancybox&#x2F;3.5.7&#x2F;
+<span class="token key atrule">fancybox</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/ <span class="token comment">#https://cdn.staticfile.org/fancybox/3.5.7/</span>
 
-mathjax: https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;mathjax&#x2F;3.0.5&#x2F;es5&#x2F;
+<span class="token key atrule">mathjax</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/mathjax/3.0.5/es5/
 
-katex: https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;KaTeX&#x2F;0.11.1&#x2F;
+<span class="token key atrule">katex</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/KaTeX/0.11.1/
 
-aplayer: https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;aplayer&#x2F;1.10.1&#x2F;
+<span class="token key atrule">aplayer</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/aplayer/1.10.1/
 
-busuanzi: https:&#x2F;&#x2F;busuanzi.ibruce.info&#x2F;busuanzi&#x2F;2.3&#x2F;
+<span class="token key atrule">busuanzi</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//busuanzi.ibruce.info/busuanzi/2.3/
 
-clipboard: https:&#x2F;&#x2F;cdn.bootcdn.net&#x2F;ajax&#x2F;libs&#x2F;clipboard.js&#x2F;2.0.6&#x2F; #https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;clipboard.js&#x2F;2.0.6&#x2F;
+<span class="token key atrule">clipboard</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/ <span class="token comment">#https://cdn.staticfile.org/clipboard.js/2.0.6/</span>
 
-mermaid: https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;mermaid&#x2F;8.5.0&#x2F;
+<span class="token key atrule">mermaid</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/mermaid/8.5.0/
 
-valine: https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;valine&#x2F;1.4.14&#x2F;
+<span class="token key atrule">valine</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/valine/1.4.14/
 
-gitalk: https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;gitalk&#x2F;1.6.2&#x2F;
+<span class="token key atrule">gitalk</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/gitalk/1.6.2/
 
-blueimp_md5: https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;blueimp-md5&#x2F;2.13.0&#x2F;
+<span class="token key atrule">blueimp_md5</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/blueimp<span class="token punctuation">-</span>md5/2.13.0/
 
-disqusjs: https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;disqusjs@1.0&#x2F;dist&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<span class="token key atrule">disqusjs</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/disqusjs@1.0/dist/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <hr>
 <h3 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h3><p id="faq1"></p>
