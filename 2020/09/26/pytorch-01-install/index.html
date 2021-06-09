@@ -14,7 +14,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="(Anaconda + CUDA + PyTorch + PyCharm)">
+  <meta name="description" content="(Anaconda + CUDA + PyTorch + PyCharm + cuDNN)">
   <meta name="author" content="Guoguo">
   <meta name="keywords" content="">
   
@@ -219,7 +219,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      878 字
+      1.2k 字
     </span>
   
 
@@ -229,7 +229,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11
+      14
        分钟
     </span>
   
@@ -263,62 +263,82 @@
             
             <div class="markdown-body">
               <div class="note note-success">
-            <p>开发环境：</p><p>Python 3.8 + Anaconda 4.8.3</p><p>CUDA 9.0</p><p>Pycharm Community</p>
+            <p>系统环境：</p><p>NIVIDIA GeForce GTX 1050 Ti</p><p>Python 3.8 + Anaconda 4.8.3</p><p>CUDA 10.0</p><p>Pycharm Community</p>
           </div>
 
 <hr>
-<h3 id="1-安装Anaconda"><a href="#1-安装Anaconda" class="headerlink" title="1. 安装Anaconda"></a>1. 安装Anaconda</h3><p>下载 Anaconda：<a target="_blank" rel="noopener" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a></p>
+<h2 id="1-安装Anaconda"><a href="#1-安装Anaconda" class="headerlink" title="1. 安装Anaconda"></a>1. 安装Anaconda</h2><p>下载 Anaconda：<a target="_blank" rel="noopener" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a></p>
 <p>Anaconda 安装器分有 Windows、MacOS、Linux 三种版本。根据系统选择相应的版本进行下载。</p>
 <p>下载完成后双击运行，无脑NEXT。但要记得选择添加至环境变量。</p>
 <p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/1.jpg" srcset="/img/loading.gif" lazyload alt="Anaconda安装面板"></p>
-<p>安装完成后，在命令行中输入命令 <code>conda list</code> ，看到Anaconda环境里的包后既表示安装成功。</p>
+<p>安装完成后，在命令行中输入命令 <code>conda -V</code> ，看到Anaconda环境里的包后既表示安装成功。</p>
 <hr>
-<h3 id="2-安装CUDA"><a href="#2-安装CUDA" class="headerlink" title="2. 安装CUDA"></a>2. 安装CUDA</h3><p><mark>安装CUDA不是必须步骤，如果你不需要或者不能使用显卡处理数据，那么就不需要进行CUDA的安装</mark></p>
+<h2 id="2-安装CUDA"><a href="#2-安装CUDA" class="headerlink" title="2. 安装CUDA"></a>2. 安装CUDA</h2><p><mark>安装CUDA不是必须步骤，如果你不需要或者不能使用显卡处理数据，那么就不需要进行CUDA的安装</mark></p>
 <p>CUDA 只能运行在 NVIDIA 显卡上面，请确保电脑有一张 NVIDIA 显卡。</p>
-<h4 id="2-1-查看显卡驱动版本"><a href="#2-1-查看显卡驱动版本" class="headerlink" title="2.1 查看显卡驱动版本"></a>2.1 查看显卡驱动版本</h4><p>安装 CUDA 之前首先要查看自己的<strong>显卡驱动版本</strong>，对照显卡驱动版本下载相应版本的 CUDA</p>
+<h3 id="2-1-查看显卡驱动版本"><a href="#2-1-查看显卡驱动版本" class="headerlink" title="2.1 查看显卡驱动版本"></a>2.1 查看显卡驱动版本</h3><p>安装 CUDA 之前首先要查看自己的<strong>显卡驱动版本</strong>，对照显卡驱动版本下载相应版本的 CUDA</p>
 <ul>
-<li><p>查看显卡方式1</p>
+<li><p><strong>查看显卡驱动版本 方式1</strong></p>
 <p>使用 <code>nvidia-smi</code> 命令</p>
 <p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/2.jpg" srcset="/img/loading.gif" lazyload alt="命令行查看版本"></p>
 <p><mark>注意在特定路径下使用这个命令</mark></p>
 </li>
-<li><p>查看显卡方式2</p>
+<li><p><strong>查看显卡驱动版本 方式2</strong></p>
 <p>打开显卡驱动窗口，点击 <strong>帮助</strong> → <strong>系统信息</strong>，在显示窗口可以看到驱动程序版本。</p>
 <p>或者再点击 <strong>组件</strong> 按钮，可以直接看到 CUDA 对应的驱动版本</p>
 <p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/3.jpg" srcset="/img/loading.gif" lazyload alt="显卡驱动查看版本"></p>
 </li>
 </ul>
-<h4 id="2-2-下载CUDA"><a href="#2-2-下载CUDA" class="headerlink" title="2.2 下载CUDA"></a>2.2 下载CUDA</h4><p>有了显卡驱动版本号后，对照下面张图确定需要下载 CUDA 版本。</p>
+<h3 id="2-2-下载CUDA"><a href="#2-2-下载CUDA" class="headerlink" title="2.2 下载CUDA"></a>2.2 下载CUDA</h3><p>有了显卡驱动版本号后，对照下面张图确定需要下载 CUDA 版本。</p>
 <p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/4.jpg" srcset="/img/loading.gif" lazyload alt="显卡驱动对照CUDA版本图"></p>
-<p>下载CUDA：<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a>。选择相应的版本进行下载。</p>
+<p><font color='red'>可以看到，<strong>显卡驱动</strong>对<strong>CUDA</strong>是向下支持的。</font></p>
+<p>对比前面两张图，我的显卡驱动版本是 <strong>391.25</strong>，支持的CUDA版本是 <strong>9.1.84</strong> 以及 <strong>9.1</strong> 以下的 <strong>8.0 ，7.5 ，7.0</strong>。但是，不支持 <strong>9.1</strong> 以上的 <strong>10.0</strong>。</p>
+<p>然而我需要跑的模型偏偏需要 <strong>CUDA 10.0</strong> 👇👇👇</p>
+<div class="note note-danger">
+            <p>如果你的显卡驱动版本不支持你想要安装的CUDA版本，请先升级显卡驱动</p>
+          </div>
+
+<p>👉👉👉 <a target="_blank" rel="noopener" href="https://www.nvidia.cn/Download/index.aspx?lang=cn">更新显卡驱动</a></p>
+<p>更新显卡驱动之后，可以看到我的显卡驱动最高支持 <strong>CUDA 11.3</strong></p>
+<p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/Snipaste_2021-05-28_17-06-01.png" srcset="/img/loading.gif" lazyload alt="查看显卡驱动版本"></p>
+<p><strong>下载CUDA</strong>：<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a>。选择相应的版本进行下载。</p>
 <p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/5.jpg" srcset="/img/loading.gif" lazyload alt="下载CUDA"></p>
-<h4 id="2-3-安装CUDA"><a href="#2-3-安装CUDA" class="headerlink" title="2.3 安装CUDA"></a>2.3 安装CUDA</h4><p>双击安装程序进行安装。</p>
-<p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/6.jpg" srcset="/img/loading.gif" lazyload alt="安装CUDA"></p>
-<p>安装完成后，在命令行中输入命令 <code>nvcc -V</code> 测试是否安装成功。</p>
+<h3 id="2-3-安装CUDA"><a href="#2-3-安装CUDA" class="headerlink" title="2.3 安装CUDA"></a>2.3 安装CUDA</h3><p>双击安装程序进行安装。</p>
+<p>在参考了 <a target="_blank" rel="noopener" href="https://blog.csdn.net/Mind_programmonkey/article/details/99688839/">mind_programmonkey</a> 的博客之后，选择自定义安装。</p>
+<p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/Snipaste_2021-05-28_17-10-54.png" srcset="/img/loading.gif" lazyload alt="安装CUDA"></p>
+<p>注意只勾选指定的组件。</p>
+<p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/Snipaste_2021-05-28_17-12-38.png" srcset="/img/loading.gif" lazyload alt="安装CUDA"><br>安装完成后，在命令行中输入命令 <code>nvcc -V</code> 测试是否安装成功。</p>
 <hr>
-<h3 id="3-安装PyTorch安装"><a href="#3-安装PyTorch安装" class="headerlink" title="3. 安装PyTorch安装"></a>3. 安装PyTorch安装</h3><div class="note note-danger">
-            <p>在获取 conda 安装命令时，要注意 <code>cudatoolkit</code> 的版本必须和自己安装的 cuda 版本一致。</p>
+<h2 id="3-安装PyTorch安装"><a href="#3-安装PyTorch安装" class="headerlink" title="3. 安装PyTorch安装"></a>3. 安装PyTorch安装</h2><div class="note note-info">
+            <p>PyTorch的安装主要有两种方式：一种是使用 <strong>conda</strong> 命令进行安装，一种是下载 <strong>wheel</strong> 文件使用 <strong>pip</strong> 进行安装</p><p>本文使用第一种</p>
           </div>
 
 <p>访问PyTorch网站，<a target="_blank" rel="noopener" href="https://pytorch.org/">https://pytorch.org/</a></p>
 <p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/7.jpg" srcset="/img/loading.gif" lazyload alt="获取安装PyTorch命令"></p>
 <p>选择相应的环境和版本，将红色方框中的命令复制下来</p>
-<p>以管理员方式进入命令行，运行刚刚复制的命令进行安装PyTorch</p>
+<p>以管理员方式进入命令行，运行刚刚复制的命令进行安装PyTorch（<font color='red'>建议将PyTorch安装在虚拟环境中 </font>）</p>
+<div class="note note-danger">
+            <p>在获取 conda 安装命令时，要注意 <code>cudatoolkit</code> 的版本必须和自己安装的 cuda 版本一致。</p>
+          </div>
+
 <br>
 
 <p><font color='red'>如果没有相应的 CUDA 版本，点击 <a target="_blank" rel="noopener" href="https://pytorch.org/get-started/previous-versions/">Previous versions of PyTorch</a></font><br><br></p>
+<p>查找 CUDA 10.0 并且是使用 conda 进行安装的命令</p>
+<p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/Snipaste_2021-06-09_16-11-34.png" srcset="/img/loading.gif" lazyload alt="获取安装命令"></p>
+<p>复制命令，在命令行中执行</p>
+<p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/Snipaste_2021-06-09_16-25-47.png" srcset="/img/loading.gif" lazyload alt="安装"></p>
 <p id="faq1_"></p>
 
-<p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/8.jpg" srcset="/img/loading.gif" lazyload alt="安装PyTorch"></p>
+
 <p><font color='red'>如果安装速度太慢，或者总是安装失败，建议<a href="#faq1">设置 conda 镜像</a></font></p>
 <hr>
-<h3 id="4-配置PyCharm"><a href="#4-配置PyCharm" class="headerlink" title="4. 配置PyCharm"></a>4. 配置PyCharm</h3><p>在 PyCharm 中，我们需要将编译器修改为 Anaconda 安装的 Python 。</p>
+<h2 id="4-配置PyCharm"><a href="#4-配置PyCharm" class="headerlink" title="4. 配置PyCharm"></a>4. 配置PyCharm</h2><p>在 PyCharm 中，我们需要将编译器修改为 Anaconda 安装的 Python 。</p>
 <ul>
 <li><p>点击File → New Project。</p>
 </li>
 <li><p>在Location中输入项目地址，点击 Project Interpreter → Existing interpreter。</p>
 </li>
-<li><p>将编译器选择为 anacoda 路径下的 python.exe。</p>
+<li><p>将编译器选择为 anacoda 路径下的 python.exe。<br><font color='red'>如果PyTorch安装在虚拟环境中，则选择 <code>C:\Users\用户名\anaconda3\envs\环境名称\python.exe</code> </font></p>
 </li>
 </ul>
 <p><img src="https://gitee.com/isguohr/imgbed/raw/master/pytorch-01-install/9.jpg" srcset="/img/loading.gif" lazyload alt="选择编译器1"></p>
@@ -331,11 +351,11 @@
 
 <p>看到 <code>pytorch版本号</code> 和 <code>True</code> ，则表示顺利安装成功了。</p>
 <p>如果是 <code>False</code> ，则无法通过CUDA使用GPU。</p>
-<h3 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h3><h4 id="配置conda镜像"><a href="#配置conda镜像" class="headerlink" title="配置conda镜像"></a>配置conda镜像</h4><p id="faq1"></p>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="配置conda镜像"><a href="#配置conda镜像" class="headerlink" title="配置conda镜像"></a>配置conda镜像</h3><p id="faq1"></p>
 
 <div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
-<p>输完以上这条命令后，<code>~</code> (C:\Users\用户名)路径下会出现 <code>.condarc</code> 文件</p>
+<p>输完以上这条命令后，<code>~</code> (C:\Users\用户名) 路径 下会出现 <code>.condarc</code> 文件</p>
 <p>打开 <code>.condarc</code> 文件，替换为以下内容</p>
 <div class="code-wrapper"><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">channels</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> defaults
@@ -356,9 +376,9 @@
   <span class="token key atrule">simpleitk</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//mirrors.tuna.tsinghua.edu.cn/anaconda/cloud<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <p><a class="btn" href="#faq1_">点击返回</a></p>
-<h4 id="卸载-CUDA"><a href="#卸载-CUDA" class="headerlink" title="卸载 CUDA"></a>卸载 CUDA</h4><p>除了 <code>NIVIDIA 图形驱动程序、NIVIDIA physX</code> 系统软件</p>
+<h3 id="卸载-CUDA"><a href="#卸载-CUDA" class="headerlink" title="卸载 CUDA"></a>卸载 CUDA</h3><p>除了 <code>NIVIDIA 图形驱动程序、NIVIDIA physX 系统软件</code> </p>
 <p>卸载其他和 NIVIDIA 有关的一切程序。</p>
-<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><p>[1] come_377e，<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1fd15d2408bf">win10+cuda11.0+vs2019安装教程</a><br>[2] 土堆碎念，<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhouzhiyao/p/11784055.html">PyTorch环境配置及安装</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1] come_377e，<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1fd15d2408bf">win10+cuda11.0+vs2019安装教程</a><br>[2] 土堆碎念，<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhouzhiyao/p/11784055.html">PyTorch环境配置及安装</a><br>[3] mind_programmonkey，<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mind_programmonkey/article/details/99688839/">win10下pytorch-gpu安装以及CUDA详细安装过程</a></p>
 
             </div>
             <hr>
