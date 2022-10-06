@@ -1,0 +1,1301 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.jpg">
+  <link rel="icon" href="/img/favicon.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Guoguo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="【hexo】学习篇（三）| hexo博客部署 (github + jsdelivr) - \(￣︶￣*\))">
+<meta property="og:type" content="website">
+<meta property="og:title" content="page.title">
+<meta property="og:url" content="http://example.com/woshixiaoguo.github.io/2020/08/25/hexo-03-deploy/index.html">
+<meta property="og:site_name" content="\(￣︶￣*\))">
+<meta property="og:description" content="【hexo】学习篇（三）| hexo博客部署 (github + jsdelivr) - \(￣︶￣*\))">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/1.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/2.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/3.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/4.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/5.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/6.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/7.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/8.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/9.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/10.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/11.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/12.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/13.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/14.jpg">
+<meta property="og:image" content="https://v1-blog.oss-cn-shanghai.aliyuncs.com/hexo-03-deploy/15.gif">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/16.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/17.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/18.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/19.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/20.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/21.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/22.jpg">
+<meta property="og:image" content="http://example.com/img/hexo-03-deploy/23.jpg">
+<meta property="article:published_time" content="2022-09-19T14:51:19.044Z">
+<meta property="article:modified_time" content="2022-09-19T14:51:19.044Z">
+<meta property="article:author" content="Guoguo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/hexo-03-deploy/1.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>page.title - \(￣︶￣*\))</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Guoguo</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/document/">
+                <i class="iconfont icon-book"></i>
+                document
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="page.title"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.jpg">
+  <link rel="icon" href="/img/favicon.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="无需购买服务器部署方案，部署至github并使用jsdelivr加速。">
+  <meta name="author" content="Guoguo">
+  <meta name="keywords" content="">
+  
+  <title>【hexo】学习篇（三）| hexo博客部署 (github + jsdelivr) - \(￣︶￣*\))</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/themes/prism-okaidia.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Guoguo</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/document/">
+                <i class="iconfont icon-book"></i>
+                文档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="【hexo】学习篇（三）| hexo博客部署 (github + jsdelivr)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-08-25 20:46" pubdate>
+        2020年8月25日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      47
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【hexo】学习篇（三）| hexo博客部署 (github + jsdelivr)</h1>
+            
+            <div class="markdown-body">
+              <h3 id="0-技术选型"><a href="#0-技术选型" class="headerlink" title="0. 技术选型"></a>0. 技术选型</h3><p>在决定最后到底用何种方式来部署我的博客时，我参考了几种方案。</p>
+<p>比如：</p>
+<div class="note note-success">
+            <ul><li>方案一：直接部署在家庭的服务器上，通过 DDNS + 端口映射 的方式来突破外网访问内网的限制。</li><li>方案二：通过阿里 OSS（Object storage service，对象存储服务）来托管我们的静态博客。</li><li>方案三：在云服务器上创建 Git 仓库，通过 Git Hooks 将本地生成的博客静态资源，推送到 Nginx 服务的托管目录。</li><li>方案四：使用 github pages 功能布置博客，并通过 jsdelivr 加速。也就是本篇博客所要详细讨论的方案。</li></ul>
+          </div>
+
+<h3 id="1-本地-git-与-github-绑定"><a href="#1-本地-git-与-github-绑定" class="headerlink" title="1. 本地 git 与 github 绑定"></a>1. 本地 git 与 github 绑定</h3><p>如果是平时有使用过 <strong>push</strong> 的同学，这一步的教程你们肯定是做过的了。这其实就是在本地 git 仓库设置一个远程仓库。</p>
+<h4 id="1-1-本地-git-设置用户名和邮箱"><a href="#1-1-本地-git-设置用户名和邮箱" class="headerlink" title="1.1 本地 git 设置用户名和邮箱"></a>1.1 本地 git 设置用户名和邮箱</h4><p>首先，右击打开 <strong>Git Bash</strong> ，设置用户名和邮箱来进行和 <strong>github</strong> 的绑定</p>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"你的名字"</span>
+<span class="token function">git</span> config --global user.email <span class="token string">"你的邮箱"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div>
+
+<p><mark>这里的名字和邮箱并不需要设置为github账号的名字和邮箱。只是为本地git设置一个用户名，以便以后往远程仓库 push 的时候，远程仓库能够记录下来是谁 push 的。</mark></p>
+<p>如果你不知道你是否设置成功，或者不记得以前是否设置过这两个参数，可以使用这两条命令进行查看</p>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config user.name
+<span class="token function">git</span> config user.email<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div>
+
+<h4 id="1-2-生成-ssh-密钥文件"><a href="#1-2-生成-ssh-密钥文件" class="headerlink" title="1.2 生成 ssh 密钥文件"></a>1.2 生成 ssh 密钥文件</h4><p>在 <strong>Git Bash</strong> 中输入一下命令</p>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"你的邮箱"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+
+<p>这里可以不设密码，直接敲三个回车。就可以看到你的密钥文件被存放在了 <code> c:/Users/username/.ssh/</code>  文件夹下。</p>
+<p><img src="/img/hexo-03-deploy/1.jpg" srcset="/img/loading.gif" lazyload alt="生成 ssh 密钥文件"></p>
+<blockquote>
+<p>我这里因为以前生成过密钥文件，所以他让我覆盖密钥文件</p>
+</blockquote>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> ~/.ssh/id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+
+<p>输入上面这行代码后，就可以看到下面这一串字符，也就是你的公钥，也就是我们要在 github 上添加的东西。</p>
+<p><img src="/img/hexo-03-deploy/2.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>或者你也可以打开 <code>bash</code> 里说明的路径。 <code> c:/Users/username/.ssh/</code></p>
+<p><img src="/img/hexo-03-deploy/3.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>其中的 <code>id_rsa</code> 是私钥，用于解密，存在于客户机</p>
+<p>而 <code>id_rsa.pub</code> 是公钥，用于加密，存在于服务器。所以在下一步中，我们要把公钥添加在 <strong>github</strong> 上。</p>
+<p>打开 <code>id_rsa.pub</code> 文件，可以看到里面的内容和 <strong>bash</strong> 中输出的一样。复制这些内容。</p>
+<h4 id="1-3-给-github-添加密钥"><a href="#1-3-给-github-添加密钥" class="headerlink" title="1.3 给 github 添加密钥"></a>1.3 给 github 添加密钥</h4><ol>
+<li>登录 <code>github</code> ，点击头像旁边的菜单按钮，点击 <code>Settings</code> 。</li>
+</ol>
+<p><img src="/img/hexo-03-deploy/4.jpg" srcset="/img/loading.gif" lazyload></p>
+<ol start="2">
+<li>点击 <code>SSH and GPG</code> keys</li>
+</ol>
+<p><img src="/img/hexo-03-deploy/5.jpg" srcset="/img/loading.gif" lazyload></p>
+<ol start="3">
+<li>点击 <code>New SSH key</code> </li>
+</ol>
+<p><img src="/img/hexo-03-deploy/6.jpg" srcset="/img/loading.gif" lazyload></p>
+<ol start="4">
+<li>将复制的内容，也就是公钥粘贴在 <code>Key</code> 输入框中，Title框随便填写一个，用于区别其他的 <code>SSH keys</code> 就行了</li>
+</ol>
+<p><img src="/img/hexo-03-deploy/7.jpg" srcset="/img/loading.gif" lazyload></p>
+<h4 id="1-4-验证绑定是否成功"><a href="#1-4-验证绑定是否成功" class="headerlink" title="1.4 验证绑定是否成功"></a>1.4 验证绑定是否成功</h4><p>完成以上内容后，我们的本地 <code>git</code> 和 <code>github</code> 就完成绑定了。我们可以通过下面这个命令来进行测试。</p>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+
+<p>如果看到 <strong>bash</strong> 如下图输出 <code>You&#39;ve successfully authenticated</code>，则表明绑定成功。</p>
+<p><img src="/img/hexo-03-deploy/8.jpg" srcset="/img/loading.gif" lazyload></p>
+<div class="note note-danger">
+            <p>如果说这一步你出现了如下的报错，这是因为第一次登陆 github 主机， 你的 known_host 里没有 github 的公钥。在这里输入一个 yes 并回车，github 的公钥就会被保存至本机，下一次再连接 github 的时候就会直接验证通过了。</p>
+          </div>
+
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">The authenticity of <span class="token function">host</span> <span class="token string">'github.com (52.74.223.119)'</span> can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to <span class="token builtin class-name">continue</span> connecting <span class="token punctuation">(</span>yes/no/<span class="token punctuation">[</span>fingerprint<span class="token punctuation">]</span><span class="token punctuation">)</span>? <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div>
+
+<hr>
+<h3 id="2-将博客部署至-github"><a href="#2-将博客部署至-github" class="headerlink" title="2. 将博客部署至 github"></a>2. 将博客部署至 github</h3><p>将博客部署至 <code>github</code> 的过程其实就是将 <code>hexo</code> 生成的静态文件 <strong>push</strong> 到我们的 <code>github</code> 仓库的过程。因此我们需要在 <code>github</code> 上新建一个仓库来存放我们博客的静态文件，然后借助 <code>hexo-deploy-git</code> 插件将我们的文件从本地 <strong>push</strong> 到远程仓库 <code>github</code> 。</p>
+<h4 id="2-1-创建博客仓库"><a href="#2-1-创建博客仓库" class="headerlink" title="2.1 创建博客仓库"></a>2.1 创建博客仓库</h4><p>要创建的这个博客仓库，跟我们平时的仓库不一样。因为我们部署至 <code>github</code> 的目的其实是要使用 <code>github pages</code> 服务</p>
+<p>两点要求：</p>
+<ul>
+<li>仓库名为 <code>用户名.github.io</code> </li>
+<li>仓库为<strong>公共仓库</strong></li>
+</ul>
+<p><font color='red'>就好比我这个，我的用户名是 <code>woshixiaoguo</code> ，因此我的仓库名应该填 <code>woshixiaoguo.github.io</code> </font></p>
+<p><font color='blue'>所以不要像我在图片里只填了一个用户名，我只是发现在填了用户名时，有一个神奇弹窗</font>🧐</p>
+<p><img src="/img/hexo-03-deploy/9.jpg" srcset="/img/loading.gif" lazyload></p>
+<h4 id="2-2-安装Git部署插件"><a href="#2-2-安装Git部署插件" class="headerlink" title="2.2 安装Git部署插件"></a>2.2 安装Git部署插件</h4><p>在 <code>bash</code> 中输入 <code>npm install hexo-deployer-git --save</code>，插件会下载至我们博客文件夹下的 <code>node_modules</code> 文件夹中。</p>
+<p><img src="/img/hexo-03-deploy/10.jpg" srcset="/img/loading.gif" lazyload></p>
+<h4 id="2-3-修改博客配置文件"><a href="#2-3-修改博客配置文件" class="headerlink" title="2.3 修改博客配置文件"></a>2.3 修改博客配置文件</h4><p>为了修改博客的部署方式，我们需要修改  <code>博客文件夹</code>  路径下的 <code>_config.yml</code> 文件，<font color='red'>而不是 <code>博客文件夹/themes/</code> 路径下的 <code>_config.yml</code> </font></p>
+<p>这两个文件是不一样的！如果你改的是后者，那下一步操作就不会起作用。</p>
+<p><img src="/img/hexo-03-deploy/11.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>打开博客配置文件 <code>_config.yml</code> 。然后，回到我们创建好仓库的 <code>github</code>页面。复制地址栏的地址，又或者点击那个像记事板的按钮。可以看到从记事板复制的地址比从地址栏复制的地址要多一个 <code>.git</code> 的后缀。</p>
+<p><img src="/img/hexo-03-deploy/12.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>然后，在 <code>_config.yml</code> 文件中以下图的方式输入这个地址。</p>
+<p><img src="/img/hexo-03-deploy/13.jpg" srcset="/img/loading.gif" lazyload></p>
+<h4 id="2-4-执行部署命令"><a href="#2-4-执行部署命令" class="headerlink" title="2.4 执行部署命令"></a>2.4 执行部署命令</h4><p>现在，我们建好了仓库，装好了插件，配好了文件。那么，就可以执行最后一步。</p>
+<p>在命令行中输入 <code>hexo d</code> ，然后静静等待我们的代码上传 <strong>github</strong>。在这过程中，会需要我们输入一次 <strong>github</strong> 的账号和密码。</p>
+<p><img src="/img/hexo-03-deploy/14.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>如果一切都像下图一样顺利完成，那么我们的博客就上线了，可以通过 <code>github账号.github.io</code> 这个地址来进行访问。</p>
+<p>就好比我的 <strong>github</strong> 账号是 <code>woshixiaoguo</code> ，那么我的博客可以通过 <a target="_blank" rel="noopener" href="https://woshixiaoguo.github.io/">https://woshixiaoguo.github.io</a> 来进行访问。</p>
+<p id="faq1_"></p>
+
+<p><img src="https://v1-blog.oss-cn-shanghai.aliyuncs.com/hexo-03-deploy/15.gif" srcset="/img/loading.gif" lazyload></p>
+<span class="label label-danger">每次 hexo d 都要输入账号密码让人不免觉得有点麻烦。其实，我们可以摆脱。</span>具体请看<a href="#faq1">FAQ</a>。
+
+<hr>
+<h3 id="3-更换域名"><a href="#3-更换域名" class="headerlink" title="3. 更换域名"></a>3. 更换域名</h3><p>使用 <strong>github pages</strong> 部署好我们的博客后，我们可以通过 <code>××××.gihtub.io</code> 这个域名进行访问。但是，我们任然想要一个更加个性的域名。</p>
+<h4 id="3-1-准备个人域名"><a href="#3-1-准备个人域名" class="headerlink" title="3.1 准备个人域名"></a>3.1 准备个人域名</h4><h4 id="1-购买"><a href="#1-购买" class="headerlink" title="1. 购买"></a>1. 购买</h4><p>我个人的域名是在阿里云万网上购买的。所以这里我也只提供阿里云万网域名的操作，其他域名也可以借鉴。</p>
+<p>首先，打开阿里云，<a target="_blank" rel="noopener" href="https://aliyun.com/">https://aliyun.com</a></p>
+<ul>
+<li>点击域名</li>
+<li>输入你想要的域名</li>
+<li>搜索</li>
+</ul>
+<p><img src="/img/hexo-03-deploy/16.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>然后，怎么逛菜市场还要我教你？🛒💸</p>
+<div class="note note-danger">
+            <p>如果你看到了一个一年只要10元以下并且刚好是你喜欢的名字。OMG！买它！买它！。千万不要想着考虑考虑，这样的域名你犹豫个一晚上，第二天绝对看不到了。而且，强烈推荐买它个十年，价格可能也就在两百多元。如果你是想要先买个一年用用看，第二年再续。那到时候，他可不是这个价了。一个首年只要8元的域名，当你要续费时，可能第二年就要50元。</p>
+          </div>
+
+<h4 id="2-实名"><a href="#2-实名" class="headerlink" title="2. 实名"></a>2. 实名</h4><p>在购买了域名以后，在阿里云首页点击 控制台 → 产品与服务 → 域名。</p>
+<p><img src="/img/hexo-03-deploy/17.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>域名需要实名认证才可以用，不然不给解析。</p>
+<p>点击提交资料，给刚刚购买的域名实名认证。主要是身份证的照片还有一些个人信息。这个认证的过程一般说是二十天，但是我每次两个小时就认证成功了。</p>
+<h4 id="3-2-解析个人域名"><a href="#3-2-解析个人域名" class="headerlink" title="3.2 解析个人域名"></a>3.2 解析个人域名</h4><p>点击上面那张图域名后面的 “<strong>解析</strong>”。</p>
+<p><img src="/img/hexo-03-deploy/18.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>在这里，我们要设置两类记录。</p>
+<ul>
+<li>CNAME记录，指向另外一个域名</li>
+<li>A记录，指向一个 IPV4地址</li>
+</ul>
+<h4 id="1-CNAME"><a href="#1-CNAME" class="headerlink" title="1. CNAME"></a>1. CNAME</h4><p>指向的域名是我们的 <strong>github pages</strong> 域名 <code>username.github.io</code> </p>
+<p>点击添加记录，输入以下信息</p>
+<div class="note note-success">
+            <ul><li>记录类型：CNAME</li><li>解析线路：默认</li><li>记录值：<code>xxxx.github.io</code></li><li>TTL：10分钟</li><li>主机记录：www</li></ul>
+          </div>
+
+<h4 id="2-A"><a href="#2-A" class="headerlink" title="2. A"></a>2. A</h4><p>指向的域名是我们的 <strong>github pages</strong> 所在的服务器的 <strong>IP</strong> 地址。</p>
+<p>在命令行里输入</p>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ping</span> xxxx.github.io<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+
+<p>使用这个命令来查找这个域名的 <strong>IP</strong> 地址。</p>
+<p>如果发现找不到主机，那我们就借助第三方工具来实现。<a target="_blank" rel="noopener" href="http://ip.tool.chinaz.com/">http://ip.tool.chinaz.com/</a></p>
+<p>输入你的 <strong>github pages</strong> 地址，然后查询。</p>
+<p><img src="/img/hexo-03-deploy/19.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>点击添加记录</p>
+<div class="note note-success">
+            <ul><li>记录类型：A</li><li>主机记录：@</li><li>解析线路：默认</li><li>记录值：我们查到的 <strong>IP</strong> 地址</li><li>TTL：10分钟</li></ul>
+          </div>
+
+<p><font color='red'>注：如果需要设置为二级域名，则主机记录改为相应的字符串。比如你申请的域名为aliyun.com。则填写 abc，对应 abc.aliyun.com。填写 www，对应 <a target="_blank" rel="noopener" href="http://www.aliyun.com/">www.aliyun.com</a></font></p>
+<p><mark>经过多次尝试发现，在设置了二级域名后。www分配给A记录，@分配给CNAME记录。又或者www分配给A记录，@分配给CNAME记录。这两种情况都不影响二级域名blog.guoguo.host的使用，但是 <a target="_blank" rel="noopener" href="http://www.guoguo.host/">www.guoguo.host</a> 或者 guoguo.host 不能访问。希望懂的伙伴讨论一下，疑义相与析。</mark></p>
+<h4 id="3-3-设置-github-pages-自定义域名"><a href="#3-3-设置-github-pages-自定义域名" class="headerlink" title="3.3 设置 github pages 自定义域名"></a>3.3 设置 github pages 自定义域名</h4><p>最后一步，来到我们的博客仓库 <code>username/username.github.io</code> </p>
+<p>点击 <strong>Settings</strong></p>
+<p><img src="/img/hexo-03-deploy/20.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>一直往下翻，直到你看见 <strong>GitHub Pages</strong></p>
+<p><img src="/img/hexo-03-deploy/21.jpg" srcset="/img/loading.gif" lazyload></p>
+<p id="faq2_"></p>
+
+<p>在Custom domain里面，输入你的域名</p>
+<p>🎉🎊🎇大功告成！</p>
+<p>多次使用 <code>hexo d</code> 更新博客内容后，你可能会发现，每 <code>hexo d</code> 一遍，就要手动修改一次这个 Custom domain。其实，我们有办法摆脱。具体请看 <a href="#faq2">FAQ</a>。</p>
+<hr>
+<h3 id="4-使用-jsdelivr-优化访问速度"><a href="#4-使用-jsdelivr-优化访问速度" class="headerlink" title="4. 使用 jsdelivr 优化访问速度"></a>4. 使用 jsdelivr 优化访问速度</h3><h4 id="4-1-jsdelivr是啥"><a href="#4-1-jsdelivr是啥" class="headerlink" title="4.1 jsdelivr是啥"></a>4.1 jsdelivr是啥</h4><p><img src="/img/hexo-03-deploy/22.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><strong>jsdelivr</strong> 是个 <strong>CDN</strong>，为开源项目提供服务的 <strong>CDN</strong>。<strong>CDN</strong> 是啥？<strong>CDN</strong> 就是<strong>内容分发网络</strong>（Content Delivery Network）。</p>
+<p>他就是个大仓库，由遍布各地的仓库（服务器）组成。（像京东那样？🐶）</p>
+<p>当你需要从仓库里取东西时，这个大仓库直接安排离你最近的那个仓库为你传输信息。（好像真的像京东🐶）</p>
+<h4 id="4-2-jsdelivr能做啥"><a href="#4-2-jsdelivr能做啥" class="headerlink" title="4.2 jsdelivr能做啥"></a>4.2 jsdelivr能做啥</h4><h5 id="1-特性"><a href="#1-特性" class="headerlink" title="1. 特性"></a>1. 特性</h5><p><a target="_blank" rel="noopener" href="http://www.jsdelivr.com/features">http://www.jsdelivr.com/features</a></p>
+<p>在官网里，关于jsdelivr的特性描述为：</p>
+<p><strong>jsDelivr</strong> 为 <strong>npm</strong>、<strong>GitHub</strong>、<strong>WordPress</strong> 插件和一些提供特殊需求的自定义端点提供镜像。</p>
+<p><img src="/img/hexo-03-deploy/23.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><strong>npm</strong> 我们不关心，<strong>wordPress</strong> 插件我们也用不到。唯一跟我们有关的就是 <strong>GitHub</strong>，我们的博客目前是部署在 <strong>GitHub</strong> 仓库里，使用的 <strong>GitHub Pages</strong> 服务。</p>
+<h5 id="2-使用"><a href="#2-使用" class="headerlink" title="2. 使用"></a>2. 使用</h5><p>只需要通过访问特定的 <strong>URL</strong>，就可以更快地速度访问 <strong>GitHub</strong> 仓库中的资源</p>
+<p>比如：</p>
+<ul>
+<li>加载 GitHub release，commit 或 branch</li>
+</ul>
+<div class="code-wrapper"><pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header-name keyword">https:</span>//cdn.jsdelivr.net/gh/user/repo@version/file
+<span class="token header-name keyword">https:</span>//cdn.jsdelivr.net/gh/用户名/仓库名@版本号/文件名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div>
+
+<ul>
+<li>省略版本号，或者使用 “latest” 也可以访问</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/jquery/jquery@latest/dist/jquery.min.js">https://cdn.jsdelivr.net/gh/jquery/jquery@latest/dist/jquery.min.js</a></p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js">https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js</a></p>
+<p>可能看到这里，你还没有明白 <strong>jsDelivr</strong> 到底怎么用，到底怎么配置。</p>
+<p>其实，他不用配置。正如官网首页说的，他是 <strong>automated</strong></p>
+<div class="note note-primary">
+            <p>像上面这两个 JS 文件，都是存放在 GitHub仓库里的资源。也就是说，我们也可以把博客里用的静态资源存放在 GitHub 仓库里。然后，每次打开博客时。浏览器通过访问这种特定的 URL 来加载博客用到的静态资源。从而实现提升打开博客的速度。</p>
+          </div>
+
+<p><font color='red'>重！</font></p>
+<p><font color='red'>重点!</font></p>
+<p><font color='red'>重点来!</font></p>
+<p><font color='red'>重点来啦!</font></p>
+<div class="note note-danger">
+            <p>两件事情：</p><ul><li>把博客里的静态资源上传至自己的仓库</li><li>修改博客引用静态资源的方式</li></ul>
+          </div>
+
+<p>对于上传静态资源，具体可以参照一位叫作 <strong>如有乐享</strong> 的大佬的文章，<a target="_blank" rel="noopener" href="https://51.ruyo.net/15149.html">Github+jsDelivr为脚本/图片等静态文件加速的全球CDN</a></p>
+<p>除了 <strong>JS</strong> 文件，静态资源还有我们博客里的图片。对于博客加载图片的速度优化，我建议你使用（<strong>GitHub</strong> + <strong>jsDelivr</strong> + <strong>Picgo</strong>) 搭一个图床。可以参考 <strong>TRHX</strong> 大佬的文章，<a target="_blank" rel="noopener" href="https://www.itrhx.com/2019/08/01/A27-image-hosting/">Github+jsDelivr+PicGo 打造稳定快速、高效免费图床</a></p>
+<h4 id="4-3-盘他"><a href="#4-3-盘他" class="headerlink" title="4.3 盘他"></a>4.3 盘他</h4><p>那么到底如何使用 <strong>jsdelivr</strong> 来提速我们的博客，其实对于使用不同的主题，做法可能不太一样。</p>
+<ul>
+<li>如果你使用的是 <a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery"><strong>matery</strong></a> 主题，那么你只需要修改一下主题路径下的配置文件即可。</li>
+<li>如果你像我一样使用的是 <a target="_blank" rel="noopener" href="https://gitee.com/mirrors/hexo-theme-fluid"><strong>fluid</strong></a> 主题，那么更简单。不需要配置，开发主题的作者已经做好了。虽然不一定用了<strong>jsdelivr</strong>，但是也用了其他的 <strong>CDN</strong> 加速服务。</li>
+</ul>
+<h4 id="matery主题"><a href="#matery主题" class="headerlink" title="matery主题"></a>matery主题</h4><p>打开 <code>博客路径/themes/matery</code> 路径下的 <code>_config.yml</code> 文件</p>
+<p>拉到最后，填写 <strong>jsDelivr</strong> 属性</p>
+<div class="code-wrapper"><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">jsDelivr</span><span class="token punctuation">:</span>
+  <span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/gh/woshixiaoguo/woshixiaoguo.github.io
+<span class="token comment"># url: https://cdn.jsdelivr.net/gh/xxxx/xxxx.github.io</span>
+<span class="token comment"># xxxx改为自己的github用户名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div>
+
+<h4 id="fluid主题"><a href="#fluid主题" class="headerlink" title="fluid主题"></a>fluid主题</h4><p>打开 <code>博库路径/themes/fluid</code> 路径下的 <code>_static.prefix.yml</code> 文件</p>
+<p>或者，如果你使用了平滑升级</p>
+<p>打开 <code>博客路径/source/_data</code> 路径下的 <code>fluid_static_prefix.yml</code> 文件</p>
+<p>记得在第一次使用 <strong>fluid</strong> 主题的时候，发现静态资源总是加载不出来，所以将使用 <strong>staticfile</strong> 服务的静态资源重新替换成了使用其他 <strong>cdn</strong> 服务的静态资源。</p>
+<p>以下 <code>#</code> 后面的都是原生的配置，由于不能使用，寻找了替代品。</p>
+<div class="code-wrapper"><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">anchor</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/anchor<span class="token punctuation">-</span>js/4.2.2/ <span class="token comment">#https://cdn.staticfile.org/anchor-js/4.2.2/</span>
+
+<span class="token key atrule">github_markdown</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/github<span class="token punctuation">-</span>markdown<span class="token punctuation">-</span>css/4.0.0/ <span class="token comment">#https://cdn.staticfile.org/github-markdown-css/4.0.0/</span>
+
+<span class="token key atrule">jquery</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/ <span class="token comment">#https://cdn.staticfile.org/jquery/3.4.1/</span>
+
+<span class="token key atrule">bootstrap</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/twitter<span class="token punctuation">-</span>bootstrap/4.4.1/ <span class="token comment">#https://cdn.staticfile.org/twitter-bootstrap/4.4.1/</span>
+
+<span class="token key atrule">highlightjs</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/highlight.js/10.0.0/
+
+<span class="token key atrule">prismjs</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/prism/1.21.0/ <span class="token comment">#https://cdn.staticfile.org/prism/1.21.0/</span>
+
+<span class="token key atrule">tocbot</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/ <span class="token comment">#https://cdn.staticfile.org/tocbot/4.11.1/</span>
+
+<span class="token key atrule">typed</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/typed.js/2.0.11/ <span class="token comment">#https://cdn.staticfile.org/typed.js/2.0.11/</span>
+
+<span class="token key atrule">fancybox</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/ <span class="token comment">#https://cdn.staticfile.org/fancybox/3.5.7/</span>
+
+<span class="token key atrule">mathjax</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/mathjax/3.0.5/es5/
+
+<span class="token key atrule">katex</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/KaTeX/0.11.1/
+
+<span class="token key atrule">aplayer</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/aplayer/1.10.1/
+
+<span class="token key atrule">busuanzi</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//busuanzi.ibruce.info/busuanzi/2.3/
+
+<span class="token key atrule">clipboard</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/ <span class="token comment">#https://cdn.staticfile.org/clipboard.js/2.0.6/</span>
+
+<span class="token key atrule">mermaid</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/mermaid/8.5.0/
+
+<span class="token key atrule">valine</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/valine/1.4.14/
+
+<span class="token key atrule">gitalk</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/gitalk/1.6.2/
+
+<span class="token key atrule">blueimp_md5</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.staticfile.org/blueimp<span class="token punctuation">-</span>md5/2.13.0/
+
+<span class="token key atrule">disqusjs</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/disqusjs@1.0/dist/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+
+<hr>
+<h3 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h3><p id="faq1"></p>
+
+<h4 id="1-每次-hexo-d-都要输入密码"><a href="#1-每次-hexo-d-都要输入密码" class="headerlink" title="1. 每次 hexo d 都要输入密码"></a>1. 每次 <code>hexo d</code> 都要输入密码</h4><p>我们在 <code>2.3 修改博客配置文件</code> 中，仓库的地址使用的是 HTTPS 地址。在给远程仓库（github）设置了 ssh 公钥后，我们可以通过 ssh 来建立安全通道，而无需再使用账密的方式来鉴权。</p>
+<p>因此，我们需要把 HTTPS 地址改为 SSH 地址。</p>
+<p><font color="red">你们仿照着下面的形式进行修改（千万别把我的地址直接复制过去了！）</font></p>
+<p>将原先的 <code>https://github.com/woshixiaoguo/woshixiaoguo.github.io.git</code> (HTTPS地址)</p>
+<p>更改为 <code>git@github.com:woshixiaoguo/woshixiaoguo.github.io.git</code> (SSH地址)</p>
+<p><mark>SSH地址可以通过打开 github 仓库，点击 Code -&gt; 点击SSH     </mark></p>
+<p><a class="btn" href="#faq1_">点击返回</a></p>
+<p id="faq2"></p>
+
+<h4 id="2-每次-hexo-d-之后都要修改-github-pages-的自定义域名"><a href="#2-每次-hexo-d-之后都要修改-github-pages-的自定义域名" class="headerlink" title="2. 每次 hexo d 之后都要修改 github pages 的自定义域名"></a>2. 每次 <code>hexo d</code> 之后都要修改 github pages 的自定义域名</h4><p>在 <code>博客路径\source</code> 这个路径下创建一个 <code>CNAME</code> 文件。</p>
+<p>注意：</p>
+<ul>
+<li><p>这个文件没有后缀名，在命令行中输入 <code>touch CNAME</code> 即可创建这样一个文件</p>
+</li>
+<li><p>在这个文件中输入你的域名地址</p>
+<p>完成这两部操作后，每次 <code>hexo d</code> 就无需再修改 <strong>github pages</strong> 的自定义域名了。</p>
+</li>
+</ul>
+<p><a class="btn" href="#faq2_">点击返回</a></p>
+<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><p>[1] 吴润，<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">GitHub+Hexo 搭建个人网站详细教程</a><br>[2] 如有乐享，<a target="_blank" rel="noopener" href="https://51.ruyo.net/15149.html">Github+jsDelivr为脚本/图片等静态文件加速的全球CDN</a><br>[3] 大大怪将军鸭，<a target="_blank" rel="noopener" href="https://blog.csdn.net/wzg0817/article/details/108110509">使用jsdelivr访问github资源，为hexo站点提提速。</a><br>[4] TRHX，<a target="_blank" rel="noopener" href="https://www.itrhx.com/2019/08/01/A27-image-hosting/">Github+jsDelivr+PicGo 打造稳定快速、高效免费图床</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Git/">Git</a>
+                    
+                      <a class="hover-with-bg" href="/tags/hexo/">hexo</a>
+                    
+                      <a class="hover-with-bg" href="/tags/cdn/">cdn</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%9F%9F%E5%90%8D/">域名</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/09/26/pytorch-01-install/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【PyTorch】入门 | 环境搭建</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/23/hexo-02-optimize/">
+                        <span class="hidden-mobile">【hexo】学习篇（二）| hexo博客功能完善</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     GHR <i class="iconfont icon-love"></i> LX 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+    
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      jQuery('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      jQuery('#modalSearch').on('shown.bs.modal', function() {
+        jQuery('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
+
+
+  
+
+</article>
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       GHR <i class="iconfont icon-love"></i> LX 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+
+  <script src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
