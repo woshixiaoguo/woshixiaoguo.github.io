@@ -16,23 +16,24 @@
   <meta name="author" content="Guoguo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;windows&#x2F;wsl&#x2F;install#upgrade-version-from-wsl-1-to-wsl-2 bios 打开 virtu windows 功能打开 虚拟机平台 wsl --set-default-version 2  wsl --install -d Ubuntu-20.04  sudo passwd # 设置管理">
+    <meta name="description" content="官方文档 👉👉👉 https:&#x2F;&#x2F;www.sqlalchemy.org&#x2F; 安装连接 MySQLfrom sqlalchemy import create_engine, MetaData from sqlalchemy.ext.declarative import declarative_base from sqlalchemy.orm import sessionmaker, scoped">
 <meta property="og:type" content="article">
-<meta property="og:title" content="wsl-01-install">
-<meta property="og:url" content="http://example.com/2022/07/25/wsl-01-install/index.html">
+<meta property="og:title" content="使用 SQLALchemy">
+<meta property="og:url" content="http://example.com/2022/09/19/SQLALchemy/index.html">
 <meta property="og:site_name" content="\(￣︶￣*\))">
-<meta property="og:description" content="https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;windows&#x2F;wsl&#x2F;install#upgrade-version-from-wsl-1-to-wsl-2 bios 打开 virtu windows 功能打开 虚拟机平台 wsl --set-default-version 2  wsl --install -d Ubuntu-20.04  sudo passwd # 设置管理">
+<meta property="og:description" content="官方文档 👉👉👉 https:&#x2F;&#x2F;www.sqlalchemy.org&#x2F; 安装连接 MySQLfrom sqlalchemy import create_engine, MetaData from sqlalchemy.ext.declarative import declarative_base from sqlalchemy.orm import sessionmaker, scoped">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-25T00:59:06.000Z">
-<meta property="article:modified_time" content="2022-10-07T05:39:16.344Z">
+<meta property="article:published_time" content="2022-09-19T13:38:13.521Z">
+<meta property="article:modified_time" content="2022-09-19T13:38:13.521Z">
 <meta property="article:author" content="Guoguo">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>wsl-01-install - \(￣︶￣*\))</title>
+  <title>使用 SQLALchemy - \(￣︶￣*\))</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -223,7 +224,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="wsl-01-install"></span>
+            <span id="subtitle" data-typed-text="使用 SQLALchemy"></span>
           
         </div>
 
@@ -234,8 +235,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-25 08:59" pubdate>
-          2022年7月25日 早上
+        <time datetime="2022-09-19 21:38" pubdate>
+          2022年9月19日 晚上
         </time>
       </span>
     
@@ -246,7 +247,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          348 字
+          798 字
         
       </span>
     
@@ -257,7 +258,7 @@
         
         
         
-          3 分钟
+          7 分钟
         
       </span>
     
@@ -295,25 +296,48 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">wsl-01-install</h1>
+            <h1 style="display: none">使用 SQLALchemy</h1>
             
             
               <div class="markdown-body">
                 
-                <p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2">https://docs.microsoft.com/zh-cn/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2</a></p>
-<p>bios 打开 virtu</p>
-<p>windows 功能打开 虚拟机平台</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wsl --set-default-version <span class="token number">2</span>
+                <p><strong>官方文档</strong> 👉👉👉 <a target="_blank" rel="noopener" href="https://www.sqlalchemy.org/">https://www.sqlalchemy.org/</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="连接-MySQL"><a href="#连接-MySQL" class="headerlink" title="连接 MySQL"></a>连接 MySQL</h2><figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sqlalchemy <span class="token keyword">import</span> create_engine<span class="token punctuation">,</span> MetaData
+<span class="token keyword">from</span> sqlalchemy<span class="token punctuation">.</span>ext<span class="token punctuation">.</span>declarative <span class="token keyword">import</span> declarative_base
+<span class="token keyword">from</span> sqlalchemy<span class="token punctuation">.</span>orm <span class="token keyword">import</span> sessionmaker<span class="token punctuation">,</span> scoped_session
 
-wsl <span class="token parameter variable">--install</span> <span class="token parameter variable">-d</span> Ubuntu-20.04
+<span class="token comment"># 建立与MySQL的连接</span>
+engine <span class="token operator">=</span> create_engine<span class="token punctuation">(</span>'mysql<span class="token operator">+</span>pymysql<span class="token punctuation">:</span><span class="token operator">//</span>用户名<span class="token punctuation">:</span>密码@localhost<span class="token operator">/</span>数据库<span class="token punctuation">)</span>
 
-<span class="token function">sudo</span> <span class="token function">passwd</span> <span class="token comment"># 设置管理员密码</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<span class="token comment"># 定义模型类继承的父类 及 数据连接会话</span>
+DBsession <span class="token operator">=</span> sessionmaker<span class="token punctuation">(</span>bind<span class="token operator">=</span>engine<span class="token punctuation">)</span>
+dbsession <span class="token operator">=</span> scoped_session<span class="token punctuation">(</span>DBsession<span class="token punctuation">)</span>  <span class="token comment"># 线程安全</span>
+Base <span class="token operator">=</span> declarative_base<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 创建对象的基类</span>
+md <span class="token operator">=</span> MetaData<span class="token punctuation">(</span>bind<span class="token operator">=</span>engine<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
-<p>下载 WSL2 内核，解决报错：WslRegisterDistribution failed with error: 0x800701bc</p>
-<p><a target="_blank" rel="noopener" href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi</a></p>
-<p>安装 CMake Tools</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> gdb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h2 id="ORM-建表"><a href="#ORM-建表" class="headerlink" title="ORM 建表"></a>ORM 建表</h2><ol>
+<li>定义模型类</li>
+<li>使用 <code>create_all()</code> 建表</li>
+</ol>
+<figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sqlalchemy <span class="token keyword">import</span> Column<span class="token punctuation">,</span> Integer<span class="token punctuation">,</span> String<span class="token punctuation">,</span> 
 
+<span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 继承 Base</span>
+    <span class="token comment"># 表的名字</span>
+    __tablename__ <span class="token operator">=</span> <span class="token string">"student_tbl"</span>
+
+    <span class="token comment"># 表的字段</span>
+    <span class="token builtin">id</span> <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">,</span> primary_key<span class="token operator">=</span>Tue<span class="token punctuation">)</span> <span class="token comment"># 主键</span>
+    name <span class="token operator">=</span> Column<span class="token punctuation">(</span>String<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    num <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">)</span>
+    sex <span class="token operator">=</span> Column<span class="token punctuation">(</span>String<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    major <span class="token operator">=</span> Column<span class="token punctuation">(</span>String<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+Student<span class="token punctuation">.</span>metadata<span class="token punctuation">.</span>create_all<span class="token punctuation">(</span>engine<span class="token punctuation">)</span> 创建表<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+
+<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2><figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sqlalchemy <span class="token keyword">import</span> Table
+<span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    __table__ <span class="token operator">=</span> Table<span class="token punctuation">(</span><span class="token string">'student_tbl'</span><span class="token punctuation">,</span> md<span class="token punctuation">,</span> autoload<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
                 
               </div>
             
@@ -321,6 +345,34 @@ wsl <span class="token parameter variable">--install</span> <span class="token p
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/ORM-%E6%A1%86%E6%9E%B6/" class="category-chain-item">ORM 框架</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Python/">#Python</a>
+      
+    </div>
   
 </div>
 
@@ -330,8 +382,8 @@ wsl <span class="token parameter variable">--install</span> <span class="token p
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>wsl-01-install</div>
-      <div>http://example.com/2022/07/25/wsl-01-install/</div>
+      <div>使用 SQLALchemy</div>
+      <div>http://example.com/2022/09/19/SQLALchemy/</div>
     </div>
     <div class="license-meta">
       
@@ -343,7 +395,7 @@ wsl <span class="token parameter variable">--install</span> <span class="token p
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月25日</div>
+          <div>2022年9月19日</div>
         </div>
       
       
@@ -375,18 +427,12 @@ wsl <span class="token parameter variable">--install</span> <span class="token p
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/19/SQLALchemy/" title="使用 SQLALchemy">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">使用 SQLALchemy</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/05/vscode-remote-dev/" title="vscode-remote-dev">
-                        <span class="hidden-mobile">vscode-remote-dev</span>
+                      <a href="/2022/07/25/wsl-01-install/" title="wsl-01-install">
+                        <span class="hidden-mobile">wsl-01-install</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
