@@ -25,12 +25,12 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/hexo-03-deploy/index.png">
 <meta property="article:published_time" content="2020-08-25T12:46:03.000Z">
-<meta property="article:modified_time" content="2022-09-19T14:51:19.136Z">
+<meta property="article:modified_time" content="2022-10-07T14:42:52.533Z">
 <meta property="article:author" content="Guoguo">
-<meta property="article:tag" content="Git">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="cdn">
 <meta property="article:tag" content="域名">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/hexo-03-deploy/index.png">
   
@@ -78,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -124,7 +124,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -136,7 +136,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                归档
+                <span>归档</span>
               </a>
             </li>
           
@@ -148,7 +148,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -160,7 +160,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -172,7 +172,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                关于
+                <span>关于</span>
               </a>
             </li>
           
@@ -184,7 +184,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/document/">
                 <i class="iconfont icon-book"></i>
-                document
+                <span>document</span>
               </a>
             </li>
           
@@ -196,7 +196,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/links/">
                 <i class="iconfont icon-link-fill"></i>
-                友链
+                <span>友链</span>
               </a>
             </li>
           
@@ -204,15 +204,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -252,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.7k 字
+          7.6k 字
         
       </span>
     
@@ -395,7 +396,8 @@ Are you sure you want to <span class="token builtin class-name">continue</span> 
 <p>就好比我的 <strong>github</strong> 账号是 <code>woshixiaoguo</code> ，那么我的博客可以通过 <a target="_blank" rel="noopener" href="https://woshixiaoguo.github.io/">https://woshixiaoguo.github.io</a> 来进行访问。</p>
 <p id="faq1_"></p>
 
-<p><img src="https://v1-blog.oss-cn-shanghai.aliyuncs.com/hexo-03-deploy/15.gif" srcset="/img/loading.gif" lazyload></p>
+<!-- ![](https://v1-blog.oss-cn-shanghai.aliyuncs.com/hexo-03-deploy/15.gif) -->
+<p><img src="/img/hexo-03-deploy/15.gif" srcset="/img/loading.gif" lazyload></p>
 <span class="label label-danger">每次 hexo d 都要输入账号密码让人不免觉得有点麻烦。其实，我们可以摆脱。</span>具体请看<a href="#faq1">FAQ</a>。
 
 <hr>
@@ -502,7 +504,7 @@ Are you sure you want to <span class="token builtin class-name">continue</span> 
 <h4 id="matery主题"><a href="#matery主题" class="headerlink" title="matery主题"></a>matery主题</h4><p>打开 <code>博客路径/themes/matery</code> 路径下的 <code>_config.yml</code> 文件</p>
 <p>拉到最后，填写 <strong>jsDelivr</strong> 属性</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">jsDelivr</span><span class="token punctuation">:</span>
-  <span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/gh/woshixiaoguo/woshixiaoguo.github.io
+  <span class="token key atrule">url</span><span class="token punctuation">:</span> /img/woshixiaoguo.github.io
 <span class="token comment"># url: https://cdn.jsdelivr.net/gh/xxxx/xxxx.github.io</span>
 <span class="token comment"># xxxx改为自己的github用户名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
@@ -605,13 +607,13 @@ Are you sure you want to <span class="token builtin class-name">continue</span> 
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Git/">#Git</a>
-      
         <a href="/tags/hexo/">#hexo</a>
       
         <a href="/tags/cdn/">#cdn</a>
       
         <a href="/tags/%E5%9F%9F%E5%90%8D/">#域名</a>
+      
+        <a href="/tags/Git/">#Git</a>
       
     </div>
   
@@ -690,10 +692,13 @@ Are you sure you want to <span class="token builtin class-name">continue</span> 
             </div>
 
             
-  <article id="comments" lazyload>
-    
+  
+  
+    <article id="comments" lazyload>
+      
 
-  </article>
+    </article>
+  
 
 
           </article>
@@ -705,7 +710,10 @@ Are you sure you want to <span class="token builtin class-name">continue</span> 
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -739,6 +747,12 @@ Are you sure you want to <span class="token builtin class-name">continue</span> 
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -958,6 +972,49 @@ Are you sure you want to <span class="token builtin class-name">continue</span> 
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
